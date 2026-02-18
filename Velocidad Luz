@@ -1,0 +1,18 @@
+using System;
+
+public class Ejercicio5
+{
+    public static void Main()
+    {
+        // 1. Crea una variable double velocidadLuz
+        double velocidadLuz = 299792.458;
+
+        // 2. Convierte la variable a string usando ToString()
+        string velocidadTexto = velocidadLuz.ToString();
+
+        // 3. Reto: Usa ToString("N3") para separadores de miles y 3 decimales
+        string velocidadFormateada = velocidadLuz.ToString("N3");
+
+        Console.WriteLine("Reporte de Velocidad: " + velocidadFormateada + " km/s");
+    }
+}
