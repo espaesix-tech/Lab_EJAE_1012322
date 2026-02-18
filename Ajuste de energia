@@ -1,0 +1,19 @@
+public class Program
+{
+    public static void Main()
+    {
+        // 1. Declara una variable double
+        double energiaGenerada = 987.65;
+
+        // 2 y 3. Crea la variable int y usa casting explícito (int)
+        // El prefijo (int) le indica al compilador que acepte la pérdida de precisión.
+        int energiaLimitada = (int)energiaGenerada;
+
+        // 4. Imprime ambos valores
+        Console.WriteLine("Energía Generada (original): " + energiaGenerada);
+        Console.WriteLine("Energía Limitada (truncada): " + energiaLimitada);
+
+        // Observación del resultado
+        Console.WriteLine("\nResultado: El valor pasó de 987.65 a 987.");
+    }
+}
