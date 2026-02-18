@@ -1,0 +1,18 @@
+using System;
+
+public class Ejercicio5
+{
+    public static void Main()
+    {
+        string señalOxigeno = "true";
+
+        bool oxigenoActivo = Convert.ToBoolean(señalOxigeno);
+
+        string temperaturaCabina = "22.8";
+
+        double temperaturaConvertida = Convert.ToDouble(temperaturaCabina, System.Globalization.CultureInfo.InvariantCulture);
+
+        Console.WriteLine("Estado de Oxígeno: " + oxigenoActivo);
+        Console.WriteLine("Temperatura de Cabina: " + temperaturaConvertida + "°C");
+    }
+}
