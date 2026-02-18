@@ -1,0 +1,24 @@
+using System;
+
+public class RecepcionCoordenadas
+{
+    public static void Main()
+    {
+        // 1. Pide al usuario que ingrese la distancia
+        Console.WriteLine("Por favor, ingrese la distancia al planeta más cercano en U.A.:");
+
+        // 2. Guarda la entrada en un string entradaRadar
+        string entradaRadar = Console.ReadLine();
+
+        // 3. Convierte el string a int usando int.Parse()
+        int distanciaConvertida = int.Parse(entradaRadar);
+
+        // 4. Suma 100 unidades (margen de seguridad)
+        int resultadoFinal = distanciaConvertida + 100;
+
+        // Muestra el resultado final
+        Console.WriteLine("\n--- Procesando Trayectoria ---");
+        Console.WriteLine("Distancia original: " + distanciaConvertida);
+        Console.WriteLine("Distancia con margen de seguridad (total): " + resultadoFinal);
+    }
+}
