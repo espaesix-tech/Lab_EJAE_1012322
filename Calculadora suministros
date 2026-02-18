@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // 1. Pide al usuario el Precio (como texto)
+        Console.Write("Ingrese el precio por galón de Litio: ");
+        string entradaUsuario = Console.ReadLine();
+
+        // 2. Conviértelo a double
+        double precioGalon = double.Parse(entradaUsuario);
+
+        // 3. Calcula el Impuesto Galáctico (12%)
+        double impuesto = precioGalon * 0.12;
+
+        // 4. Calcula el Costo Total (Precio + Impuesto)
+        double costoTotal = precioGalon + impuesto;
+
+        // 6. Requisito: Convertir a int (casting explícito) 
+        // Esto truncará los decimales (redondeo hacia abajo)
+        int costoFinalEntero = (int)costoTotal;
+
+        // 5. Muestra el total en consola
+        Console.WriteLine("El costo final de suministro es: " + costoFinalEntero);
+    }
+}
