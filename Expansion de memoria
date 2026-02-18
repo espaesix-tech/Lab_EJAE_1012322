@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // 1. Declara una variable short sensoresActivos = 128;
+        short sensoresActivos = 128;
+
+        // 2. Declara una variable int registroProcesador
+        int registroProcesador;
+
+        // 3. Asigna el valor de sensoresActivos a registroProcesador
+        // (Conversión implícita: short cabe en un int)
+        registroProcesador = sensoresActivos;
+
+        // 4. Declara una variable double precisionTotal y asígnale el valor de registroProcesador
+        // (Conversión implícita: int cabe en un double)
+        double precisionTotal = registroProcesador;
+
+        // 5. Imprime precisionTotal
+        Console.WriteLine("El valor en precisionTotal es: " + precisionTotal);
+    }
+}
