@@ -1,0 +1,52 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Bienvenido a la pizzería Bella Napoli.");
+        Console.Write("¿Desea una pizza vegetariana? (si/no): ");
+        string respuesta = Console.ReadLine().ToLower();
+
+        string tipoPizza;
+        string ingredienteElegido = "";
+
+        // 1. Switch para determinar el tipo de menú a mostrar
+        switch (respuesta)
+        {
+            case "si":
+                tipoPizza = "Vegetariana";
+                Console.WriteLine("\nIngredientes vegetarianos: \n1: Pimiento \n2: Tofu");
+                Console.Write("Elija un ingrediente (1-2): ");
+                int opcionVeg = int.Parse(Console.ReadLine());
+
+                ingredienteElegido = opcionVeg == 1 ? "Pimiento" : "Tofu";
+                break;
+
+            case "no":
+                tipoPizza = "No vegetariana";
+                Console.WriteLine("\nIngredientes no vegetarianos: \n1: Peperoni \n2: Jamón \n3: Salmón");
+                Console.Write("Elija un ingrediente (1-3): ");
+                int opcionNoVeg = int.Parse(Console.ReadLine());
+
+                // Usamos un switch anidado para los ingredientes cárnicos
+                switch (opcionNoVeg)
+                {
+                    case 1: ingredienteElegido = "Peperoni"; break;
+                    case 2: ingredienteElegido = "Jamón"; break;
+                    case 3: ingredienteElegido = "Salmón"; break;
+                    default: ingredienteElegido = "Ingrediente extra no válido"; break;
+                }
+                break;
+
+            default:
+                Console.WriteLine("Opción inválida.");
+                return;
+        }
+
+        // 2. Mostrar resultado final
+        Console.WriteLine("\n--- Resumen de su pedido ---");
+        Console.WriteLine($"Tipo de pizza: {tipoPizza}");
+        Console.WriteLine($"Ingredientes: Mozzarella, Tomate y {ingredienteElegido}.");
+    }
+}
