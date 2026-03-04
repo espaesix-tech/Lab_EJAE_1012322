@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        const double baseDinero = 2400;
+
+        Console.Write("\n Ingrese uno de los valores que se mostrara a continuacion, ");
+        Console.Write("Ingrese la puntuación del empleado (0.0, 0.4, 0.6 o más): ");
+        if (double.TryParse(Console.ReadLine(), out double puntuacion))
+        {
+        
+            if (puntuacion > 0 && puntuacion < 0.4 || puntuacion > 0.4 && puntuacion < 0.6)
+            {
+                Console.WriteLine("Error: No se permiten valores intermedios.");
+                return;
+            }
+
+         
+            string nivel = puntuacion switch
+            {
+                0.0 => "Inaceptable",
+                0.4 => "Aceptable",
+                >= 0.6 => "Meritorio",
+                _ => "Puntuación no válida"
+            };
+
+            if (nivel != "Puntuación no válida")
+            {
+                double dineroRecibido = baseDinero * puntuacion; 
+
+                Console.WriteLine("\n--- Resultados de Evaluación ---");
+                Console.WriteLine($"Nivel de rendimiento: {nivel}");
+                Console.WriteLine($"Dinero a recibir: {dineroRecibido:C} Platinos"); 
+            }
+            else
+            {
+                Console.WriteLine("La puntuación ingresada es negativa o inválida.");
+            }
+        }
+    }
+}
